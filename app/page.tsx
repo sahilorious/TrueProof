@@ -1,5 +1,4 @@
-import { ReceiptCard } from "../components/ReceiptCard";
-import { localDemoReceipt } from "../lib/mock-data";
+import { LiveReceiptPanel } from "../components/LiveReceiptPanel";
 
 export default function HomePage() {
   return (
@@ -12,7 +11,7 @@ export default function HomePage() {
           or draft history.
         </p>
       </section>
-      <ReceiptCard receipt={localDemoReceipt} />
+      <LiveReceiptPanel />
     </main>
   );
 }

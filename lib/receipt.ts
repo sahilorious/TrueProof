@@ -1,5 +1,8 @@
-import crypto from "node:crypto";
 import type { Receipt } from "./types";
+
+function createProofToken(input: { issuer: string; subject: string; score: number; sourceHash: string }): string {
+  return `${input.issuer}:${input.subject}:${input.score}:${input.sourceHash}`;
+}
 
 export function mintCredential(input: { issuer: string; subject: string; score: number; sourceHash: string }): Receipt {
   const issuedAt = new Date().toISOString();
@@ -18,7 +21,7 @@ export function mintCredential(input: { issuer: string; subject: string; score: 
       created: issuedAt,
       verificationMethod: `${input.issuer}#key-1`,
       proofPurpose: "assertionMethod",
-      jws: crypto.createHash("sha256").update(`${input.issuer}:${input.subject}:${input.score}:${input.sourceHash}`).digest("hex"),
+      jws: createProofToken(input),
     },
   };
 

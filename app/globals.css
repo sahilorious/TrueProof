@@ -41,4 +41,19 @@ h1 { margin: 0; font-size: clamp(2.2rem, 5vw, 4.3rem); line-height: 0.95; max-wi
 .good { background: rgba(117,240,193,0.12); color: var(--good); }
 .muted { color: var(--muted); }
 pre { white-space: pre-wrap; background: rgba(255,255,255,0.03); padding: 16px; border-radius: 18px; overflow: auto; }
+.actionButton {
+  border: 1px solid rgba(143, 179, 255, 0.28);
+  background: rgba(143, 179, 255, 0.14);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.actionButton.secondary {
+  background: transparent;
+}
+.actionButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } .shell { width: min(100% - 20px, 980px); padding-top: 28px; } }
