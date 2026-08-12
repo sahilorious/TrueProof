@@ -1,6 +1,7 @@
 node_modules
 .next
 dist
+__pycache__
 *.log
 .DS_Store
 node_modules

@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "parser": "tsx src/trueproof-parser.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "demo": "node scripts/dev.mjs"
   },
   "dependencies": {
     "next": "^15.4.6",
