@@ -1,0 +1,37 @@
+{
+  "name": "trueproof-extension",
+  "displayName": "TrueProof",
+  "publisher": "trueproof",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onCommand:trueproof.analyzeActiveFile",
+    "onLanguage:cpp",
+    "onLanguage:java"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "trueproof.analyzeActiveFile",
+        "title": "TrueProof: Analyze Active File"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "tsc -p ."
+  },
+  "dependencies": {
+    "tree-sitter": "^0.21.1",
+    "tree-sitter-cpp": "^0.21.0",
+    "tree-sitter-java": "^0.21.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.6",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.6.3"
+  }
+}
