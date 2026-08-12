@@ -25,20 +25,20 @@ export function LiveReceiptPanel() {
 
   const samples = {
     demo: {
-      label: "Balanced demo",
-      description: "A realistic receipt for the sample project shown on the page.",
+      label: "Main example",
+      description: "Representative receipt for the sample project shown on the page.",
       score: 97.4,
       sourceHash: localDemoReceipt.sourceHash,
     },
     logic: {
-      label: "Logic-heavy",
-      description: "More structural problem-solving, less boilerplate.",
+      label: "Stronger logic",
+      description: "Receipt with more structural reasoning and less boilerplate.",
       score: 92.85,
       sourceHash: "4b7c9eaa12f3f91ad814b0c5e9a0c0d5e3f1d8d2c9f4f1a0c0b7d5a1e2f3c4b5",
     },
     boilerplate: {
-      label: "Boilerplate-heavy",
-      description: "A weaker receipt where syntax dominates the file.",
+      label: "More boilerplate",
+      description: "Receipt where syntax plays a larger role.",
       score: 61.2,
       sourceHash: "c2d41eea941cc1f7f1a0d3d7b5f9d1a1d8b0f0fa5b7c8d9e2a3b4c5d6e7f8090",
     },
@@ -121,12 +121,12 @@ export function LiveReceiptPanel() {
   return (
     <div style={{ display: "grid", gap: 16 }}>
       <section className="card" style={{ display: "grid", gap: 18 }}>
-        <div className="eyebrow">Interactive demo</div>
+        <div className="eyebrow">Demo</div>
         <div style={{ display: "grid", gap: 10 }}>
-          <h2 style={{ margin: 0, fontSize: "1.5rem" }}>Pick a sample, then mint a receipt.</h2>
+          <h2 style={{ margin: 0, fontSize: "1.5rem" }}>Choose a sample and mint a receipt.</h2>
           <p className="muted" style={{ margin: 0, maxWidth: 680 }}>
-            This demo is designed to be understandable without technical context. You can test a good case, a weaker
-            case, and see how the receipt changes.
+            The demo is intentionally compact: choose a sample, mint a receipt, and inspect the technical details only
+            if needed.
           </p>
         </div>
 
@@ -149,11 +149,11 @@ export function LiveReceiptPanel() {
 
         <div className="sampleSummary">
           <div>
-            <span className="label">Selected sample</span>
+            <span className="label">Selected example</span>
             <strong>{activeSample.label}</strong>
           </div>
           <div>
-            <span className="label">What the judge sees</span>
+            <span className="label">Visible result</span>
             <strong>{activeSample.score.toFixed(2)}% authorship score</strong>
           </div>
         </div>
@@ -173,8 +173,8 @@ export function LiveReceiptPanel() {
         </div>
 
         <p className="muted" style={{ margin: 0, fontSize: 14 }}>
-          You do not need a local backend for the page to make sense. The receipt updates in place and the details stay
-          hidden unless you want them.
+          The page works without a local backend. The receipt updates in place and the technical preview remains
+          collapsed by default.
         </p>
       </section>
 

@@ -11,16 +11,16 @@ export function ReceiptCard({ receipt }: { receipt: Receipt }) {
       <p className="muted" style={{ marginTop: 0, maxWidth: 720 }}>{formatted.subtitle}</p>
       <div className="receiptSummary">
         <div className="stat">
-          <div className="label">What it means</div>
-          <div className="value">{receipt.score >= 90 ? "Mostly human-designed logic" : "Mixed with more boilerplate"}</div>
+          <div className="label">Result</div>
+          <div className="value">{receipt.score >= 90 ? "Strong signal" : "Mixed signal"}</div>
         </div>
         <div className="stat">
           <div className="label">Authorship Score</div>
           <div className="value">{receipt.score.toFixed(2)}%</div>
-          <div className="miniNote">Higher means more structural logic likely came from the human author.</div>
+          <div className="miniNote">Higher means more of the structural logic likely came from the human author.</div>
         </div>
         <div className="stat">
-          <div className="label">What gets shared</div>
+          <div className="label">Shared</div>
           <div className="value">Score + hash only</div>
           <div className="miniNote">No keystrokes, prompts, or draft history leave the machine.</div>
         </div>
@@ -36,7 +36,7 @@ export function ReceiptCard({ receipt }: { receipt: Receipt }) {
         </div>
       </div>
       <details className="detailsBlock">
-        <summary>Show technical receipt preview</summary>
+        <summary>Technical receipt</summary>
         <pre>{JSON.stringify(receipt.credential, null, 2)}</pre>
       </details>
     </section>

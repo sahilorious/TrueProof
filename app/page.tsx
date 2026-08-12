@@ -1,23 +1,24 @@
 import { LiveReceiptPanel } from "../components/LiveReceiptPanel";
+import { SectionLink } from "../components/SectionLink";
 
 const judgeSteps = [
-  "Open the demo and read the one-sentence summary.",
-  "Mint a receipt with one click.",
-  "Verify it and see only a score + hash, not the draft history.",
+  "Read the summary and sample use case.",
+  "Mint a receipt for one of the preset examples.",
+  "Open the receipt details if you want the technical record.",
 ];
 
 const problemCards = [
   {
-    title: "AI wrote the syntax, not the idea",
-    body: "A clean repo no longer proves who solved the hard part.",
+    title: "Repository quality does not establish authorship",
+    body: "Modern tools can complete syntax while the core reasoning remains human.",
   },
   {
-    title: "Whiteboards are the wrong answer",
-    body: "They are stressful, narrow, and ignore real workflow.",
+    title: "Screening should reflect real development",
+    body: "Whiteboards and live coding are useful, but they are not how most software is built.",
   },
   {
-    title: "Surveillance tools are not acceptable",
-    body: "We prove authorship without tracking keystrokes or prompts.",
+    title: "Verification should not require surveillance",
+    body: "TrueProof avoids keystroke logging, prompt capture, and draft storage.",
   },
 ];
 
@@ -27,26 +28,21 @@ export default function HomePage() {
       <section className="hero heroGrid">
         <div className="heroCopy">
           <div className="eyebrow">TrueProof</div>
-          <h1>A receipt for the part of code you actually wrote.</h1>
+          <h1>Authorship receipts for AI-assisted engineering.</h1>
           <p>
-            TrueProof helps engineers prove they authored the core logic of C++ and Java code without exposing
-            prompts, typos, or deleted lines. It is built for judges, recruiters, and anyone who wants trust without
-            surveillance.
+            TrueProof lets developers demonstrate authorship of the core logic in C++ and Java while keeping the
+            drafting process private.
           </p>
           <div className="heroActions">
-            <a className="actionButton" href="#demo">
-              Open interactive demo
-            </a>
-            <a className="actionButton secondary" href="#judge-flow">
-              How judges test it
-            </a>
+            <SectionLink targetId="demo" label="Open demo" />
+            <SectionLink targetId="judge-flow" label="View overview" variant="secondary" />
           </div>
         </div>
         <div className="heroProof">
           <div className="proofCard">
-            <span className="label">One-line pitch</span>
-            <strong>Prove authorship. Keep drafts private.</strong>
-            <span className="proofNote">We score structural code contribution locally and mint a minimal receipt.</span>
+            <span className="label">Product summary</span>
+            <strong>Local analysis, minimal disclosure.</strong>
+            <span className="proofNote">The prototype scores structural code contribution and mints a compact receipt.</span>
           </div>
           <div className="proofCard mutedCard">
             <span className="label">What is shared</span>
@@ -57,8 +53,8 @@ export default function HomePage() {
       </section>
 
       <section className="sectionHeading">
-        <div className="eyebrow">The problem</div>
-        <h2>Why TrueProof exists</h2>
+        <div className="eyebrow">Problem</div>
+        <h2>Why this product exists</h2>
       </section>
 
       <section className="triptych">
@@ -71,8 +67,8 @@ export default function HomePage() {
       </section>
 
       <section id="judge-flow" className="sectionHeading">
-        <div className="eyebrow">Judge flow</div>
-        <h2>How to understand and test the product in 30 seconds</h2>
+        <div className="eyebrow">Overview</div>
+        <h2>What the prototype demonstrates</h2>
       </section>
 
       <section className="steps compact">
@@ -86,17 +82,17 @@ export default function HomePage() {
 
       <section className="microExplain">
         <div className="microExplainCard">
-          <span className="label">For a normal user</span>
-          <h3>You press a button and get a receipt.</h3>
+          <span className="label">For a general audience</span>
+          <h3>Review a receipt in one page.</h3>
           <p>
-            The page shows a simple claim: this code was mostly human-designed, and here is the proof receipt.
+            The interface presents the result clearly without requiring knowledge of ASTs or cryptography.
           </p>
         </div>
         <div className="microExplainCard">
           <span className="label">For a technical reviewer</span>
-          <h3>You can open the technical preview.</h3>
+          <h3>Inspect the receipt details on demand.</h3>
           <p>
-            The receipt contains the JSON-LD credential, but the important part stays minimal by default.
+            The technical receipt is available, but the default view stays concise.
           </p>
         </div>
       </section>
