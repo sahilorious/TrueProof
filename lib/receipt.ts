@@ -37,6 +37,6 @@ export function formatReceipt(receipt: Receipt) {
     title: "Verified AI Passport Receipt",
     subtitle: "Local demo receipt minted from AST-derived provenance signals.",
     statusLabel: "Verified locally",
-    issuedAt: new Date(receipt.issuedAt).toLocaleString(),
+    issuedAt: receipt.issuedAt,
   };
 }
