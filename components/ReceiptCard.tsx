@@ -8,27 +8,37 @@ export function ReceiptCard({ receipt }: { receipt: Receipt }) {
     <section className="card">
       <div className="badge good">{formatted.statusLabel}</div>
       <h2 style={{ marginBottom: 8 }}>{formatted.title}</h2>
-      <p className="muted" style={{ marginTop: 0 }}>{formatted.subtitle}</p>
-      <div className="grid">
+      <p className="muted" style={{ marginTop: 0, maxWidth: 720 }}>{formatted.subtitle}</p>
+      <div className="receiptSummary">
+        <div className="stat">
+          <div className="label">What it means</div>
+          <div className="value">{receipt.score >= 90 ? "Mostly human-designed logic" : "Mixed with more boilerplate"}</div>
+        </div>
         <div className="stat">
           <div className="label">Authorship Score</div>
           <div className="value">{receipt.score.toFixed(2)}%</div>
+          <div className="miniNote">Higher means more structural logic likely came from the human author.</div>
         </div>
         <div className="stat">
-          <div className="label">Source Hash</div>
-          <div className="value" style={{ fontSize: "0.95rem" }}>{receipt.sourceHash}</div>
-        </div>
-        <div className="stat">
-          <div className="label">Issuer</div>
-          <div className="value">{receipt.issuer}</div>
-        </div>
-        <div className="stat">
-          <div className="label">Issued At</div>
-          <div className="value">{formatted.issuedAt}</div>
+          <div className="label">What gets shared</div>
+          <div className="value">Score + hash only</div>
+          <div className="miniNote">No keystrokes, prompts, or draft history leave the machine.</div>
         </div>
       </div>
-      <h3 style={{ marginTop: 20 }}>Credential Preview</h3>
-      <pre>{JSON.stringify(receipt.credential, null, 2)}</pre>
+      <div className="receiptMeta">
+        <div>
+          <span className="label">Issued At</span>
+          <div className="value small">{formatted.issuedAt}</div>
+        </div>
+        <div>
+          <span className="label">Issuer</span>
+          <div className="value small">{receipt.issuer}</div>
+        </div>
+      </div>
+      <details className="detailsBlock">
+        <summary>Show technical receipt preview</summary>
+        <pre>{JSON.stringify(receipt.credential, null, 2)}</pre>
+      </details>
     </section>
   );
 }
